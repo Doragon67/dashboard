@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    // URLs deiner Dashboard-Seiten
+    let pages = [
+      "https://lookerstudio.google.com/embed/reporting/59cb68e3-bb5f-4e5e-8d98-ea627ece9a92/page/l6QuF",
+      "https://lookerstudio.google.com/embed/reporting/59cb68e3-bb5f-4e5e-8d98-ea627ece9a92/page/p_l5tgkw7i2d",
+      "https://lookerstudio.google.com/embed/reporting/59cb68e3-bb5f-4e5e-8d98-ea627ece9a92/page/p_3139kq8i2d"
+    ];
+
+    let index = 0;
+
+    function changePage() {
+      document.getElementById("frame").src = pages[index];
+      index = (index + 1) % pages.length;
+    }
+
+    setInterval(changePage, 10000); // alle 10 Sekunden wechseln
+  </script>
+</head>
+
+<body style="margin:0; overflow:hidden; background:black; display:flex; justify-content:center; align-items:center; height:100vh;">
+
+  <iframe 
+    id="frame"
+    src="https://lookerstudio.google.com/embed/reporting/59cb68e3-bb5f-4e5e-8d98-ea627ece9a92/page/l6QuF"
+    width="1920"
+    height="1080"
+    style="border:none;">
+  </iframe>
+
+</body>
+</html>
